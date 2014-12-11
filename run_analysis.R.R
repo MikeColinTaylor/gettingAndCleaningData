@@ -36,5 +36,7 @@ tidyData <- cbind(sData, yData, xData)
 head(tidyData)
 
 tidyDataSummary <- colMeans(tidyData[ , 3:ncol(tidyData)])
+tidyDataSummary <- data.frame(t(unname(tidyDataSummary)))
+names(tidyDataSummary) <- names(tidyData[ , 3:ncol(tidyData)])
 
 write.table(tidyDataSummary, "summarised data.txt", row.names = F)
