@@ -51,5 +51,6 @@ mean(gdpEdu$V2[gdpEdu$Income.Group == "High income: OECD"])
 
 
 #Q5
-
+summary(as.factor(gdpEdu$Income.Group[gdpEdu$V2 <= 38]))
+#5
 
