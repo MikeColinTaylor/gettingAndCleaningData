@@ -1,6 +1,6 @@
 
 setwd("G:/Coursera/Getting and cleaning data")
-getwd()
+
 
 #Q1
 q1Data <- read.csv("https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv")
@@ -38,13 +38,18 @@ library(stringr)
 gdpEdu$V5 = str_trim(gdpEdu$V5)
 gdpEdu$V5 = str_replace_all(gdpEdu$V5, ",", "")
 
-head(order(gdpEdu$V5))
-
-(gdpEdu$V4[order(as.numeric(gdpEdu$V5))])[13]
+gdpEdu <- gdpEdu[order(as.numeric(gdpEdu$V5)), ]
+gdpEdu$V4[13]
 #St. Kitts and Nevis
 
 
 #Q4
+summary(as.factor(gdpEdu$Income.Group))
+mean(gdpEdu$V2[gdpEdu$Income.Group == "High income: nonOECD"])
+mean(gdpEdu$V2[gdpEdu$Income.Group == "High income: OECD"])
+#32.96667, 91.91304
 
 
 #Q5
+
+
