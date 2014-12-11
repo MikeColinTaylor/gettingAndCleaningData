@@ -37,4 +37,4 @@ head(tidyData)
 
 tidyDataSummary <- colMeans(tidyData[ , 3:ncol(tidyData)])
 
-write.table(tidyDataSummary, "summarised data.txt")
+write.table(tidyDataSummary, "summarised data.txt", row.names = F)
