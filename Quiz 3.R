@@ -33,7 +33,7 @@ gdpEdu <- merge(x = gdp, y = edu, by.x = "V1", by.y = "CountryCode")
 nrow(gdpEdu)
 #189
 
-install.packages("stringr")
+#install.packages("stringr")
 library(stringr)
 gdpEdu$V5 = str_trim(gdpEdu$V5)
 gdpEdu$V5 = str_replace_all(gdpEdu$V5, ",", "")
